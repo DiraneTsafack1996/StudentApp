@@ -1,0 +1,59 @@
+<div class="container py-5">
+
+    <div class="row">
+
+        <div class="col">
+            <h1 class="display-4 mt-5 mb-0">Edit eines Fach </h1>
+        </div>
+
+    </div>
+
+
+    <hr class="mt-0 mb-5 bg-dark">
+
+    <div class="row">
+        <div class="col   shadow bg-light">
+            <form [formGroup]="EditFachForm" (ngSubmit)="Edit_Fach()">
+                <div class="mb-3">
+                    <label class="form-label">FachName</label>
+                    <input type="text" class="form-control" formControlName="fachname">
+
+                     <div *ngIf="fachname_.invalid && (fachname_.dirty || fachname_.touched)" class="alert alert-danger">
+
+                        <div *ngIf="fachname_.errors?.['required']">
+                            Fach is erforderlich.
+                        </div>
+                        <div *ngIf="fachname_.errors?.['minlength']">
+                            Fach Soll mindestens 3 Caracters enthalten
+                        </div>
+
+                    </div> 
+
+
+                    <div class="row">
+                        &nbsp;
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-6">
+                            <button type="submit" [disabled]="!EditFachForm.valid" class="btn btn-secondary ">Edit eines Fach
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

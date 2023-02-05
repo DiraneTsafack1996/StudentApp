@@ -1,0 +1,99 @@
+<div class="container py-2">
+
+
+    <div class="row">
+
+        <div class="col-8">
+            <h1 class="display-4 mt-5 mb-0"> Übersicht Note des Studenten </h1>
+        </div>
+        
+        <div class="col-4">
+            <div class="row">
+                          <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Studiengang auswahlen</label>
+                                <select (change)="onChangeStudiengang($event)"  class="form-select" >
+                                    <option value="" selected>Auswählen</option>
+                                     <option *ngFor="let studiengang of obj_Studiengang"
+                                        value="{{studiengang.Studiengang_Id_ref}}">
+                                        {{studiengang.StudiengangName}}
+                                    </option> 
+                                </select>
+                
+                            </div>
+                          </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                  <div class="mb-3">
+                      <label class="form-label">Studenten auswahlen</label>
+                      <select (change)="onChangeStudent($event)"  class="form-select" >
+                        <option value="" selected>Auswählen</option>
+                        <option *ngFor="let student of Students"
+                        value="{{student.data.Student_Email_uid}}">
+                       
+                           {{student.data.Firstname}}
+                    </option>
+                      </select>
+      
+                  </div>
+                </div>
+  </div>
+        </div>
+
+     
+    </div>
+
+    <div class="row">
+
+    </div>
+
+
+    <hr class="mt-0 mb-5 bg-dark">
+    <div class="row">
+        <div class="col   shadow">
+          
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">StudentName</th>
+                    <th scope="col">StudiengangName</th>
+                    <th scope="col">FachName</th>
+                    <th scope="col">Note</th>
+                    <th scope="col">CreditPunkte</th>
+                    
+              
+                    
+                  </tr>
+                </thead>
+                <tbody *ngFor="let note of note">
+                  <tr>
+                   
+                    <td>{{note.data.StudentFirstName}}</td>
+                    <td>{{note.data.StudiengangName}}</td>
+                    <td>{{note.data.FachName}}</td>
+                    <td>{{note.data.Note}}</td>
+                    <td>{{note.data.CreditPunkte}}</td>
+                    <td>
+
+                    
+                        
+                         <!-- <button (click)="DeleteNoteStudent(note.id)" 
+                        class="btn btn-danger m-2" >Delete</button> -->
+                    
+                       
+                    </td>
+                 
+                  </tr>
+                
+                </tbody>
+              </table>
+        </div>
+
+
+    </div>
+
+ 
+
+

@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">StudentApp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isAuth" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item"  > <!--  isauth-->
+      
+            <a *ngIf="isAuth"      class="nav-link text-info"> {{email}}</a>
+          </li>
+           <li  class="nav-item" >
+        
+            <a style="cursor:pointer" *ngIf="isAuth" 
+            (click)="onclicklogout()" class="nav-link text-danger">LogOut</a>
+          </li>
+  
+          <li  class="nav-item dropdown">
+            <a *ngIf="isAuth && est_admin"  class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false"> <!--  isauth und est_admin-->
+              Studiengang
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+  
+              <li><a class="dropdown-item" routerLink="/addstudiengang">Add a Studiengang</a></li>
+              <li><a class="dropdown-item" routerLink="/liststudiengang">List von Studiengange</a></li>
+            
+          
+            </ul>
+          </li>
+
+          <li  class="nav-item dropdown">
+            <a *ngIf="isAuth && est_admin" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false"> <!--  isauth und est_admin-->
+              Student
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+  
+              <li><a class="dropdown-item" routerLink="/addstudent">Add a Student</a></li>
+              <li><a class="dropdown-item" routerLink="/liststudent">List von Student</a></li>
+            
+          
+            </ul>
+          </li>
+
+          
+          <li  class="nav-item dropdown">
+            <a *ngIf="isAuth && est_admin" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false"> <!--  isauth und est_admin-->
+              Fach
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+  
+              <li><a class="dropdown-item" routerLink="/addfach">Add a Fach</a></li>
+              <li><a class="dropdown-item" routerLink="/listfach">List von Fach</a></li>
+            
+          
+            </ul>
+          </li>
+
+          <li  class="nav-item dropdown">
+            <a *ngIf="isAuth && est_admin"  class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false"> <!--  isauth und est_admin-->
+              ModulStudiengang
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+  
+              <li><a class="dropdown-item" routerLink="/addmodulestudiengang">Add a ModulStudiengang</a></li>
+              <li><a class="dropdown-item" routerLink="/listmodulestudiengang">List von ModulStudiengang</a></li>
+            
+          
+            </ul>
+          </li>
+          
+          <li  class="nav-item dropdown">
+            <a *ngIf="isAuth && est_admin" class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false"> <!--  isauth und est_admin-->
+              Management 
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+  
+              <li><a class="dropdown-item" routerLink="/addnote">Add a Note</a></li>
+              <li><a class="dropdown-item" routerLink="/listenote">List von Noten</a></li>
+              <li><a class="dropdown-item" routerLink="/viewnote">Note eines Student</a></li>
+          
+            </ul>
+          </li>
+  
+        
+         
+  
+  
+        </ul>
+   
+  
+      </div>
+  
+      <div class="container justify-content-center">
+  
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,60 @@
+
+
+    <div class="container py-5 ">
+      <h1 class="display-4 mt-5 mb-0">List Von ModulStudiengangen </h1>
+      <hr class="mt-0 mb-5 bg-dark">
+      <div class="row">
+          &nbsp;
+     
+            <div class="row">
+               
+                      
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            
+                            <th>FachName</th>
+                            <th>CreditPunkte</th>
+                            <th>StudiengangName</th>
+                            <th>Actions</th>
+                       
+                        </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let modul of ModulStudiengang; let i = index">
+                            
+                            <td >{{modul.FachName}}</td>
+                            <td >{{modul.CreditPunkte}}</td>
+                            <td >{{modul.StudiengangName}}</td>
+                            
+                          
+                     
+            
+                            <td>
+
+                                <button  class="btn btn-danger" (click)="DeleteModulStudiengang(modul.StudiengangModule_ref_id)"     >Delete</button>
+                                
+                            </td>
+                            
+                          </tr>
+                       
+                         
+                        </tbody>
+                      </table>
+            
+                  </div>
+        
+          
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+
+

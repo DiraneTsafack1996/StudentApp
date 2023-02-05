@@ -1,0 +1,151 @@
+
+<div class="container shadow py-5">
+ 
+    <div class="row">
+        <div class="col-7">
+            <div class="card" style="width: 20rem;">
+             <img [src]="image" class="card-img-top">
+               
+            </div>
+            
+        </div>
+    </div> 
+
+
+    <div class="row">
+        <div class="col">
+            <h1 class="display-4 mt-5 mb-0">Informationen Von Studenten </h1>
+            <hr class="mt-0 mb-5 bg-dark">
+          </div>
+    </div>
+
+   
+
+   
+
+
+
+
+
+
+    <form [formGroup]="overviewForm" >
+
+        
+
+        <div class="row">
+             <div class="col-4">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Firstname</label>
+                    <input type="text" [readonly]="true" class="form-control" formControlName="firstname">
+                </div>
+            </div> 
+
+             <div class="col-4">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" [readonly]="true" class="form-control" formControlName="email">
+                </div>
+                    
+                   
+                
+            </div> 
+            <div class="col-4">
+                <div class="mb-3">
+                    <label fclass="form-label">Password</label>
+                    <input type="email" [readonly]="true" class="form-control" formControlName="password">
+                </div>
+                    
+                   
+                
+            </div> 
+
+
+
+
+
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label">Lastname</label>
+                    <input type="text" [readonly]="true" class="form-control" formControlName="lastname">
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+             <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label">MatrikulNummer</label>
+                    <input type="text" [readonly]="true" class="form-control" formControlName="matrikulnummer">
+
+                   
+
+                </div>
+            </div> 
+
+
+
+        </div>
+        <div class="row">
+             <div class="col-6">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Geschlecht</label>
+                    <input type="text" [readonly]="true" class="form-control" formControlName="geschecht">
+                </div>
+            </div> 
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label">Studiengang</label>
+                    <input type="text" [value]="StudiengangName" [readonly]="true" class="form-control" formControlName="studiengang">
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                   
+                    <label class="form-label">Nummer</label>
+                    <input  [readonly]="true" type="text" class="form-control" formControlName="nummer">
+                </div>
+            </div>
+
+             <div class="col-6">
+                <div class="mb-3">
+                   
+                    <label class="form-label">Anchriften</label>
+                    <input [readonly]="true" type="text" class="form-control" formControlName="anschrift">
+                </div>
+            </div> 
+
+
+
+
+        </div>
+
+
+
+
+
+        <button type="submit"  routerLink="/liststudent" class="btn btn-primary">Züruck zu den StudentList</button>
+    </form>
+
+
+
+
+</div>

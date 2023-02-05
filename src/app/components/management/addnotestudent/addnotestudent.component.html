@@ -1,0 +1,153 @@
+<div class="container py-2">
+
+
+    <div class="row">
+
+        <div class="col-8">
+            <h1 class="display-4 mt-5 mb-0">Add den Studenten ein Note  </h1>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Studiengang auswahlen</label>
+                <select (change)="onChangeStudiengang($event)"  class="form-select" >
+                    <option value="" selected>Auswählen</option>
+                     <option *ngFor="let studiengang of obj_Studiengang"
+                        value="{{studiengang.Studiengang_Id_ref}}">
+                        {{studiengang.StudiengangName}}
+                    </option> 
+                </select>
+
+<!-- 
+                 <div *ngIf="student_.invalid && (student_.dirty || student_.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="student_.errors?.['required']">
+                        Bitte Student Auswahlen !!!!!!!!!
+                    </div>
+                </div>   -->
+            </div>
+        </div>
+
+     
+    </div>
+
+
+    <hr class="mt-0 mb-5 bg-dark">
+
+    <div class="row">
+        <div class="col shadow bg-light">
+            <form [formGroup]="AddNoteStudent" (ngSubmit)="Add_Student_Note()">
+
+              
+
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label class="form-label">Student</label>
+                            <select [disabled]="false"  (change)="onChange($event)" class="form-select" formControlName="student">
+                                <option value="" selected>Auswählen</option>
+                                 <option *ngFor="let student of Students"
+                                    value="{{student.data.Studiengang_Id}}-{{student.data.StudiengangName}}-{{student.data.Firstname}}-{{student.data.Student_Email_uid}}">
+                                           
+                                           
+                                        
+                                           
+                                           
+                                           
+                                           
+                                           
+                                           
+                                           
+                                           
+                                    {{student.data.Firstname}}
+                                </option>
+                            </select>
+ 
+
+                             <div *ngIf="student_.invalid && (student_.dirty || student_.touched)"
+                                class="alert alert-danger">
+
+                                <div *ngIf="student_.errors?.['required']">
+                                    Bitte Student Auswahlen !!!!!!!!!
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label class="form-label">Module</label>
+                            <select class="form-select" formControlName="fach">
+                                <option value="" selected>Auswählen</option>
+                                <option *ngFor="let Course of Fach" value="{{Course.data.FachId}}-{{Course.data.FachNAme}}-{{Course.data.CreditPunkte}}"
+                                >
+                                    {{Course.data.FachNAme}}
+                                </option>
+                            </select>
+
+
+                            <div *ngIf="fach_.invalid && (fach_.dirty || fach_.touched)"
+                                class="alert alert-danger">
+
+                                <div *ngIf="fach_.errors?.['required']">
+                                    Wahlen bitte ein Fach !!!!!!!!!!!!!!
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label class="form-label">Note</label>
+                            <input type="text" class="form-control" formControlName="note">
+                            <div *ngIf="note_.invalid && (note_.dirty || note_.touched)"
+                                class="alert alert-danger">
+
+                                <div *ngIf="note_.errors?.['required']">
+                                    CreditPunkte is erforderlich.
+                                </div>
+                                <div *ngIf="note_.errors?.['min'] || note_.errors?.['max']">
+                                    Note Soll zwischen {{MinimumNumber}} und {{MaximumNumber}} liegen
+                            </div>
+
+                            </div> 
+
+
+                            <div class="row">
+                                &nbsp;
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <button type="submit" [disabled]="AddNoteStudent.invalid" class="btn btn-warning ">Add Note
+                                </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                </div>
+            </form>
+        </div>
+
+ 

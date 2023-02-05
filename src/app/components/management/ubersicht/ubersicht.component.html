@@ -1,0 +1,70 @@
+<div class="container py-5">
+
+    <div class="row">
+   
+        <div class="col">
+            <h1 class="display-4 mt-5 mb-0">Herzlich Willkommen : {{StudentName}}</h1>
+            
+        </div>
+        <br>
+     </div>
+
+
+     <div class="row">
+        <div class="col">
+            <h1 class="display-4 mt-5 mb-0">Studiengang : {{StudiengangName}}</h1>
+            
+        </div>
+     </div>
+
+
+    <hr class="mt-0 mb-5 bg-dark">
+
+    <div class="row">
+        <div class="col   shadow">
+          
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    
+                    <!-- <th scope="col">StudentName</th> -->
+                    <!-- <th scope="col">StudiengangName</th> -->
+                    <th scope="col">Module</th>
+                    <th scope="col">Note</th>
+                    <th scope="col">CreditPunkte</th>
+                    
+               
+                    
+                  </tr>
+                </thead>
+                <tbody *ngFor="let note of note">
+                  <tr>
+                   
+                    <!-- <td>{{note.data.StudentFirstName}}</td> -->
+                    <!-- <td>{{note.data.StudiengangName}}</td> -->
+                    <td>{{note.data.FachName}}</td>
+                    <td>{{note.data.Note}}</td>
+                    <td>{{note.data.CreditPunkte}}</td>
+                    <td>
+
+                    
+                        
+                     
+                    
+                       
+                    </td>
+                 
+                  </tr>
+                
+                </tbody>
+              </table>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+

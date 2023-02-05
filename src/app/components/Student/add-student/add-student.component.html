@@ -1,0 +1,237 @@
+<div class="container shadow py-5">
+    <h1 class="display-4 mt-5 mb-0">Add a Neu Student</h1>
+    <hr class="mt-0 mb-5 bg-dark">
+
+
+
+  
+    <form  [formGroup]="StudentForm" (ngSubmit)="AddStudent()">
+  
+      <!-- <h4 class="alert alert-danger" *ngIf="errormessage">
+        {{errormessage}}
+      </h4> -->
+  
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Firstname</label>
+            <input type="text" class="form-control" formControlName="firstname">
+  
+            <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="alert alert-danger">
+  
+              <div *ngIf="first_name.errors?.['required']">
+                Firstname is erforderlich.
+              </div>
+              <div *ngIf="first_name.errors?.['minlength']">
+                Firstname Soll mindestens 8 Caracters enthalten
+              </div>
+  
+            </div>
+  
+  
+            <!-- <div class="alert alert-danger" *ngIf="(register.controls['firstname'].errors['minlength'])">
+                      Firstname muss Mindestens 8 Caracters enthalten 
+                  </div> -->
+  
+          </div>
+        </div>
+  
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Lastname</label>
+            <input type="text" class="form-control" formControlName="lastname">
+  
+  
+            <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="alert alert-danger">
+  
+              <div *ngIf="last_name.errors?.['required']">
+                Lastname is erforderlich.
+              </div>
+              <div *ngIf="last_name.errors?.['minlength']">
+                Lastname Soll mindestens 8 Caracters enthalten
+              </div>
+  
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email">
+  
+  
+            <div *ngIf="(StudentForm.controls['email'].dirty
+                      || StudentForm.controls['email'].touched) &&
+                      StudentForm.controls['email'].invalid &&
+                      StudentForm.controls['email'].errors['required']" class="alert alert-danger"> E-Mail ist erforderlich
+            </div>
+  
+  
+            <div *ngIf="(StudentForm.controls['email'].errors ?.['email'] 
+                  &&  StudentForm.controls['email'].touched )" class="alert alert-danger">
+              Email Format (dirane@gmail.com zum Beispiel)
+            </div>
+  
+  
+  
+  
+  
+  
+          </div>
+        </div>
+         <div class="col-6">
+            <div class="col">
+                <div class="mb-3">
+                  <label class="form-label">Photo</label>
+                  <input type="url" class="form-control" formControlName="bild">
+        
+                  <div *ngIf="bild_.invalid && (bild_.dirty || bild_.touched)" class="alert alert-danger">
+        
+                    <div *ngIf="bild_.errors?.['required']">
+                      Bild is erforderlich.
+                    </div>
+                    <div *ngIf="bild_.errors?.['pattern']">
+                      Bitte geben sie ein Valid UrlImage ein
+                    </div>
+        
+        
+                  </div>
+        
+                </div>
+              </div>
+        </div> 
+  
+  
+  
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Anschrift</label>
+            <input type="text" class="form-control" formControlName="anschrift">
+  
+            <div *ngIf="anschrift_.invalid && (anschrift_.dirty || anschrift_.touched)" class="alert alert-danger">
+  
+              <div *ngIf="anschrift_.errors?.['required']">
+                Anschrift is erforderlich.
+              </div>
+              <div *ngIf="anschrift_.errors?.['minlength']">
+                Anschrift Soll mindestens 8 Caracters enthalten
+              </div>
+  
+            </div>
+  
+  
+            <!-- <div class="alert alert-danger" *ngIf="(register.controls['firstname'].errors['minlength'])">
+                    Firstname muss Mindestens 8 Caracters enthalten 
+                </div> -->
+  
+          </div>
+        </div>
+  
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Nummer</label>
+            <input type="text" class="form-control" formControlName="nummer">
+  
+  
+            <div *ngIf="nummer_.invalid && (nummer_.dirty || nummer_.touched)" class="alert alert-danger">
+  
+              <div *ngIf="nummer_.errors?.['required']">
+                HandyNummer is erforderlich.
+              </div>
+  
+              <div *ngIf="nummer_.errors?.['pattern']">
+                Bitte geben sie nur Nummer ein
+              </div>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Studiengang</label>
+            <select class="form-select" formControlName="studiengang">
+              <option value="" selected>Auswählen</option>
+              <option *ngFor="let studiengang of Studiengang" value="{{studiengang.Studiengang_Id_ref}}-{{studiengang.StudiengangName}}">{{studiengang.StudiengangName}}
+              </option>
+            </select>
+  
+  
+            <div *ngIf="studiengang_.invalid && (studiengang_.dirty || studiengang_.touched)" class="alert alert-danger">
+  
+              <div *ngIf="studiengang_.errors?.['required']">
+                Studiengang is erforderlich.
+              </div>
+  
+  
+            </div>
+  
+  
+            <!-- <div class="alert alert-danger" *ngIf="(register.controls['firstname'].errors['minlength'])">
+                  Firstname muss Mindestens 8 Caracters enthalten 
+              </div> -->
+  
+          </div>
+        </div>
+  
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Geschlecht</label>
+            <select class="form-select" formControlName="geschecht">
+              <option value="" selected>Auswählen</option>
+              <option *ngFor="let sexe of Geschecht" [value]="sexe">{{sexe}}</option>
+            </select>
+  
+  
+  
+            <!-- <div 
+  
+                      *ngIf="(register.controls['geschecht'].dirty
+                      || register.controls['geschecht'].touched) &&
+                      register.controls['geschecht'].invalid &&
+                      register.controls['geschecht'].errors['required']"
+                      class="alert alert-danger"
+                      > Geschecht ist erforderlich
+                  </div> -->
+  
+  
+            <div *ngIf="geschecht_.invalid && (geschecht_.dirty || geschecht_.touched)" class="alert alert-danger">
+  
+              <div *ngIf="geschecht_.errors?.['required']">
+                Geschecht is erforderlich.
+              </div>
+  
+            </div>
+  
+  
+          </div>
+        </div>
+  
+  
+  
+  
+      </div>
+  
+   
+  
+  
+  
+  
+      <button type="submit" [disabled]="StudentForm.invalid" class="btn btn-primary">Add new Student</button>
+    </form>
+  
+  
+  
+  
+  </div>

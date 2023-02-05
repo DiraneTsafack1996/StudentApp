@@ -1,0 +1,57 @@
+
+
+    <div class="container py-5 ">
+        <h1 class="display-4 mt-5 mb-0">List Von Studenten </h1>
+        <hr class="mt-0 mb-5 bg-dark">
+        <div class="row">
+            &nbsp;
+       
+              <div class="row">
+                 
+                        
+                      <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              
+                              <th>Firstname</th>
+                              <th>Lastname</th>
+                         
+                          </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let student of Student; let i = index">
+                              
+                              <td >{{student.data.Firstname}}</td>
+                              <td >{{student.data.Lastname}}</td>
+                              
+                            
+                       
+              
+                              <td>
+                                <button  class="btn btn-info m-2" [queryParams]="{id:student.id}"   routerLink="view" >View</button>
+                                <button  class="btn btn-warning m-2" [queryParams]="{id:student.id}"   routerLink="Editer" >Edit</button>
+                                  <button  class="btn btn-danger" (click)="DeleteStudent(student.id)"    >Delete</button>
+                                  
+                              </td>
+                              
+                            </tr>
+                         
+                           
+                          </tbody>
+                        </table>
+              
+                    </div>
+          
+            
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+

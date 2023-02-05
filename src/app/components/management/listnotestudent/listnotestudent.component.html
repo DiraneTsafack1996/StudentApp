@@ -1,0 +1,65 @@
+<div class="container py-5">
+
+    <div class="row">
+   
+        <div class="col">
+            <h1 class="display-4 mt-5 mb-0">Listes Von Noten</h1>
+            
+        </div>
+       
+        <br>
+       
+
+    </div>
+
+
+    <hr class="mt-0 mb-5 bg-dark">
+
+    <div class="row">
+        <div class="col   shadow">
+          
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">StudentName</th>
+                    <th scope="col">StudiengangName</th>
+                    <th scope="col">FachName</th>
+                    <th scope="col">Note</th>
+                    <th scope="col">CreditPunkte</th>
+                    
+                    <th scope="col">Actions</th>
+                    
+                  </tr>
+                </thead>
+                <tbody *ngFor="let note of note">
+                  <tr>
+                   
+                    <td>{{note.data.StudentFirstName}}</td>
+                    <td>{{note.data.StudiengangName}}</td>
+                    <td>{{note.data.FachName}}</td>
+                    <td>{{note.data.Note}}</td>
+                    <td>{{note.data.CreditPunkte}}</td>
+                    <td>
+
+                    
+                        
+                         <button (click)="DeleteNoteStudent(note.id)" 
+                        class="btn btn-danger m-2" >Delete</button>
+                    
+                       
+                    </td>
+                 
+                  </tr>
+                
+                </tbody>
+              </table>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+

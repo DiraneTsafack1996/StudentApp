@@ -1,0 +1,59 @@
+<div class="container py-5">
+
+    <div class="row">
+
+        <div class="col">
+            <h1 class="display-4 mt-5 mb-0">Edit eines Studiengang </h1>
+        </div>
+
+    </div>
+
+
+    <hr class="mt-0 mb-5 bg-dark">
+
+    <div class="row">
+        <div class="col   shadow bg-light">
+            <form [formGroup]="EditStudiengangForm" (ngSubmit)="Edit_Studiengang()">
+                <div class="mb-3">
+                    <label class="form-label">FachName</label>
+                    <input type="text" class="form-control" formControlName="studiengang">
+
+                     <div *ngIf="studiengang_.invalid && (studiengang_.dirty || studiengang_.touched)" class="alert alert-danger">
+
+                        <div *ngIf="studiengang_.errors?.['required']">
+                            Studiengang is erforderlich.
+                        </div>
+                        <div *ngIf="studiengang_.errors?.['minlength']">
+                            Studiengang Soll mindestens 3 Caracters enthalten
+                        </div>
+
+                    </div> 
+
+
+                    <div class="row">
+                        &nbsp;
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-6">
+                            <button type="submit" [disabled]="EditStudiengangForm.invalid" class="btn btn-secondary ">Edit eines Studiengang
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
